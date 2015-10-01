@@ -251,6 +251,7 @@
 \renewcommand\title[2][\sjtu@value@title]{%
   \def\sjtu@value@title{#2}
   \def\sjtu@value@titlemark{\MakeUppercase{#1}}}
+\def\projectinfo(#1,#2){\title{第#1期“#2计划”项目研究论文}}
 \renewcommand\author[1]{\def\sjtu@value@author{#1}}
 \newcommand\advisor[1]{\def\sjtu@value@advisor{#1}}
 \newcommand\coadvisor[1]{\def\sjtu@value@coadvisor{#1}}
@@ -383,7 +384,7 @@
 	  \fancyhf{}
 	  \fancyhead[L]{\includegraphics[width=0.22\textwidth]{figure/sjtubanner}}
 	  \fancyhead[R]{\nouppercase{\small\kaishu\sjtu@value@titlemark}}
-	  \fancyfoot[C]{\small 第~{\bfseries\thepage}~页\,共~{\bfseries\pageref{LastPage}}~页}
+	  %\fancyfoot[C]{\small 第~{\bfseries\thepage}~页\,共~{\bfseries\pageref{LastPage}}~页}
 	  \renewcommand{\headheight}{32pt}
 	}
 	%% 开章页页眉页脚
@@ -394,43 +395,6 @@
 	  \fancyfoot[C]{\small 第~{\bf\thepage}~页\,共~{\bf\pageref{LastPage}}~页}
 	  \renewcommand{\headheight}{32pt}
 	}
-\else
-	% 研究生学位论文页眉页脚设置
-	\if@twoside
-	  %% 正文页眉页脚
-	  \fancypagestyle{main}{
-	    \fancyhead[LO, RE]{\small\kaishu\sjtu@value@school\sjtu@value@degree\sjtu@label@thesis}
-	    \fancyhead[RO]{\nouppercase{\small\kaishu\leftmark}}
-	    \fancyhead[LE]{\nouppercase{\small\kaishu\sjtu@value@titlemark}}
-	    \fancyfoot[C]{\small ---~{\bfseries\thepage}~---}
-	    \renewcommand{\headheight}{32pt}
-	  }
-	  %% 开章页页眉页脚
-	  \fancypagestyle{plain}{
-	    \fancyhf{}
-	    \fancyhead[LO,RE]{\nouppercase{\small\kaishu\sjtu@value@school\sjtu@value@degree\sjtu@label@thesis}}
-	    \fancyhead[RO]{\nouppercase{\small\kaishu\leftmark}}
-	    \fancyhead[LE]{\nouppercase{\small\kaishu\sjtu@value@titlemark}}
-	    \fancyfoot[C]{\small ---~{\bf\thepage}~---}
-	    \renewcommand{\headheight}{32pt}
-	  }
-	\else
-	%% 正文页
-	\fancypagestyle{main}{
-	  \fancyhead[L]{\small\kaishu\sjtu@value@school\sjtu@value@degree\sjtu@label@thesis}
-	  \fancyhead[R]{\nouppercase{\small\kaishu\leftmark}}
-	  \fancyfoot[C]{\small ---~{\bf\thepage}~---}
-	  \renewcommand{\headheight}{32pt}
-	}
-	\fancypagestyle{plain}{
-	  \fancyhf{}
-	  \fancyhead[L]{\nouppercase{\small\kaishu\sjtu@value@school\sjtu@value@degree\sjtu@label@thesis}}
-	  \fancyhead[R]{\nouppercase{\small\kaishu\leftmark}}
-	  % \fancyhead[L]{\small {\it\sjtu@value@titlemark}}
-	  \fancyfoot[C]{\small ---~{\bf\thepage}~---}
-	  \renewcommand{\headheight}{32pt}
-	}
-	\fi
 \fi
 
 % 中英文摘要
