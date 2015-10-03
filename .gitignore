@@ -16,4 +16,5 @@ README.pdf
 *.swo
 *.xdv
 *~
+*.synctex.gz
 *.fdb_latexmk
