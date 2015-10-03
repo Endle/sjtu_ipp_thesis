@@ -72,6 +72,8 @@
 \RequirePackage{pdfpages}
 \RequirePackage{calc}
 \RequirePackage{algorithm, algorithmic}
+\RequirePackage{wallpaper}
+%\RequirePackage{linegoal}
 
 %==========
 % Segment 2. Define general-purpose LaTeX commands.
@@ -251,7 +253,8 @@
 \renewcommand\title[2][\sjtu@value@title]{%
   \def\sjtu@value@title{#2}
   \def\sjtu@value@titlemark{\MakeUppercase{#1}}}
-\def\projectinfo(#1,#2){\title{第#1期“#2计划”项目研究论文}}
+\def\projectinfo(#1,#2){\def\sjtu@value@projectinfo{第#1期“#2计划”\\项目研究论文}}
+\newcommand\projectno[1]{\def\sjtu@value@projectno{#1}}
 \renewcommand\author[1]{\def\sjtu@value@author{#1}}
 \newcommand\advisor[1]{\def\sjtu@value@advisor{#1}}
 \newcommand\coadvisor[1]{\def\sjtu@value@coadvisor{#1}}
@@ -295,6 +298,54 @@
   \end{center}
   \vskip \stretch{0.5}
   \cleardoublepage
+}
+
+%2. 标题
+%标题...三号黑体居中书写。之后空一行。
+%3. 作者信息 
+%包括项目参与学生所在学院、姓名及指导教师姓名所在学院、姓名，各占一行。小四号楷体居中书写。之后空一行。
+\newcommand\makecover{
+	\cleardoublepage
+	\thispagestyle{fancy}
+	\renewcommand{\headrulewidth}{0pt}
+	\fancyhead[R]{\kaishu\zihao{5}项目编号：\underline{\sjtu@value@projectno}}
+	\CenterWallPaper{0.5}{figure/sjtulogo.png}
+	%论文题目：_______________________________________
+	%项目负责人：_________  学院（系）： _______________
+	%指导教师：_________  学院（系）： _______________  
+	%参与学生：_______________________________________
+	%项目执行时间：_____年_____月 至  _____年_____月
+	\begin{center}
+		\includegraphics{figure/sjtubanner_nologo.png}
+		\vskip\stretch{1}
+		{\heiti\zihao{-1}\sjtu@value@projectinfo} %24号字
+		\vskip\stretch{1}
+		{\fangsong\zihao{4}}
+		\def\tabcolsep{1pt}
+		\def\arraystretch{1.5}
+		\kaishu\zihao{4}{ %14号
+			\makebox[15cm]{\makebox[\width][l]{论文题目：}\CJKunderline{\makebox[15cm-\widthof{论文题目：}]{测试内容}}}\\
+			\makebox[15cm]{
+				\makebox[3cm][l]{项目负责人：}\CJKunderline{\makebox[4cm]{负责人}}
+				\makebox[3cm]{学院（系）：}\CJKunderline{\makebox[5cm]{名字有点长的学院}}
+			}\\
+			\makebox[15cm]{
+				\makebox[2.5cm][l]{指导教师：}\CJKunderline{\makebox[4.2cm]{负责人}}
+				\makebox[3.3cm]{学院（系）：}\CJKunderline{\makebox[5cm]{名字有点长的学院}}
+			}\\
+			\makebox[15cm]{\makebox[\width][l]{参与学生：}\CJKunderline{\makebox[15cm-\widthof{参与学生：}]{学生列表}}}\\
+			\makebox[15cm]{
+				\makebox[3.5cm][l]{项目执行时间：}\CJKunderline{\makebox[2\width]{2015}} 年 
+				\CJKunderline{\makebox[1.5cm]{12}} 月
+				\quad{} \quad{}至
+				\CJKunderline{\makebox[2\width]{2015}} 年 \CJKunderline{\makebox[1.3cm]{9}} 月
+			}
+		}
+	\end{center}
+	\vskip \stretch{0.5}
+	\cleardoublepage
+	%只有第一页有背景 logo
+	\ClearWallPaper
 }
 
 
