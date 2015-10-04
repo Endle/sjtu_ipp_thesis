@@ -255,6 +255,16 @@
   \def\sjtu@value@titlemark{\MakeUppercase{#1}}}
 \def\projectinfo(#1,#2){\def\sjtu@value@projectinfo{第#1期“#2计划”\\项目研究论文}}
 \newcommand\projectno[1]{\def\sjtu@value@projectno{#1}}
+\newcommand\projecthead[1]{\def\sjtu@value@projecthead{#1}}
+\newcommand\projectheadmajor[1]{\def\sjtu@value@projectheadmajor{#1}}
+\newcommand\projectadvisormajor[1]{\def \sjtu@value@projectadvisormajor{#1}}
+\newcommand\projectstudents[1]{\def \sjtu@value@projectstudents{#1}}
+\def\projecttime(#1,#2,#3,#4){
+	\def \sjtu@value@time@beginyear{#1}
+	\def \sjtu@value@time@beginmonth{#2}
+	\def \sjtu@value@time@endyear{#3}
+	\def \sjtu@value@time@endmonth{#4}
+	}
 \renewcommand\author[1]{\def\sjtu@value@author{#1}}
 \newcommand\advisor[1]{\def\sjtu@value@advisor{#1}}
 \newcommand\coadvisor[1]{\def\sjtu@value@coadvisor{#1}}
@@ -308,13 +318,8 @@
 	\cleardoublepage
 	\thispagestyle{fancy}
 	\renewcommand{\headrulewidth}{0pt}
-	\fancyhead[R]{\kaishu\zihao{5}项目编号：\underline{\sjtu@value@projectno}}
+	\fancyhead[R]{\kaishu\zihao{5}项目编号：\underline{\makebox[1.8\width]{\sjtu@value@projectno}}}
 	\CenterWallPaper{0.5}{figure/sjtulogo.png}
-	%论文题目：_______________________________________
-	%项目负责人：_________  学院（系）： _______________
-	%指导教师：_________  学院（系）： _______________  
-	%参与学生：_______________________________________
-	%项目执行时间：_____年_____月 至  _____年_____月
 	\begin{center}
 		\includegraphics{figure/sjtubanner_nologo.png}
 		\vskip\stretch{1}
@@ -324,23 +329,28 @@
 		\def\tabcolsep{1pt}
 		\def\arraystretch{1.5}
 		\kaishu\zihao{4}{ %14号
-			\makebox[15cm]{\makebox[\width][l]{论文题目：}\CJKunderline{\makebox[15cm-\widthof{论文题目：}]{测试内容}}}\\
+			\makebox[15cm]{\makebox[\width][l]{论文题目：}
+				\CJKunderline{\makebox[15cm-\widthof{论文题目：}]{\sjtu@value@title}}}\\
 			\makebox[15cm]{
-				\makebox[3cm][l]{项目负责人：}\CJKunderline{\makebox[4cm]{负责人}}
-				\makebox[3cm]{学院（系）：}\CJKunderline{\makebox[5cm]{名字有点长的学院}}
+				\makebox[3cm][l]{项目负责人：}\CJKunderline{\makebox[4cm]{\sjtu@value@projecthead}}
+				\makebox[3cm]{学院（系）：}\CJKunderline{\makebox[5cm]{\sjtu@value@projectheadmajor}}
 			}\\
 			\makebox[15cm]{
-				\makebox[2.5cm][l]{指导教师：}\CJKunderline{\makebox[4.2cm]{负责人}}
-				\makebox[3.3cm]{学院（系）：}\CJKunderline{\makebox[5cm]{名字有点长的学院}}
+				\makebox[2.5cm][l]{指导教师：}\CJKunderline{\makebox[4.2cm]{\sjtu@value@advisor}}
+				\makebox[3.3cm]{学院（系）：}\CJKunderline{\makebox[5cm]{\sjtu@value@projectadvisormajor}}
 			}\\
-			\makebox[15cm]{\makebox[\width][l]{参与学生：}\CJKunderline{\makebox[15cm-\widthof{参与学生：}]{学生列表}}}\\
+			\makebox[15cm]{\makebox[\width][l]{参与学生：}
+				\CJKunderline{\makebox[15cm-\widthof{参与学生：}]{\sjtu@value@projectstudents}}}\\
 			\makebox[15cm]{
-				\makebox[3.5cm][l]{项目执行时间：}\CJKunderline{\makebox[2\width]{2015}} 年 
-				\CJKunderline{\makebox[1.5cm]{12}} 月
-				\quad{} \quad{}至
-				\CJKunderline{\makebox[2\width]{2015}} 年 \CJKunderline{\makebox[1.3cm]{9}} 月
+				\makebox[3.5cm]{项目执行时间：}
+				\makebox[2.5cm][l]{\CJKunderline{\makebox[2\width]{\sjtu@value@time@beginyear}} 年}
+				\makebox[2cm][l]{\CJKunderline{\makebox[1.2cm]{\sjtu@value@time@beginmonth}} 月}
+				\makebox[2cm][c]{至}
+				\makebox[2.5cm]{\CJKunderline{\makebox[2\width]{\sjtu@value@time@endyear}} 年}
+				\makebox[2cm]{\CJKunderline{\makebox[1.2cm]{\sjtu@value@time@endmonth}} 月}
 			}
 		}
+
 	\end{center}
 	\vskip \stretch{0.5}
 	\cleardoublepage
