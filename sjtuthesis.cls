@@ -459,10 +459,36 @@
 \fi
 
 % 中英文摘要
-\newenvironment{abstract}{\chapter*{\sjtu@value@title\vskip 20pt\sjtu@label@abstract}\markboth{\sjtu@label@abstract}{}}{}
-\newcommand\keywords[1]{\vspace{2ex}\noindent{\bf\large \sjtu@label@keywords} #1}
-\newenvironment{englishabstract}{\chapter*{\sjtu@value@englishtitle\vskip 20pt\bfseries \sjtu@label@englishabstract}\markboth{\sjtu@label@englishabstract}{}}{}
-\newcommand\englishkeywords[1]{\vspace{2ex}\noindent{\bf\large \sjtu@label@englishkeywords} #1}
+\newenvironment{abstract}{
+\begin{center}
+	\heiti\zihao{3}{	
+		\sjtu@value@title\\
+		\mbox{ }\\
+	}
+	\kaishu\zihao{-4}{
+			项目负责人：\sjtu@value@projecthead \\
+			项目负责人所在学院：\sjtu@value@projectheadmajor\\
+			指导教师：\sjtu@value@advisor\\
+			指导教师所在学院\\
+			\mbox{ }\\
+	}
+	\heiti\zihao{4}{\sjtu@label@abstract\\}	
+\end{center}
+}{}
+\newcommand\keywords[1]{
+	\noindent{\heiti\zihao{-4}{\sjtu@label@keywords}}\mbox{} \songti\zihao{5}{#1}
+	\mbox{ }\\ %关键词后空一行
+}
+\newenvironment{englishabstract}{
+	\begin{center}
+		\Large\sjtu@label@englishabstract
+	\end{center}
+}{}
+
+\newcommand\englishkeywords[1]{
+	\noindent{\large \sjtu@label@englishkeywords} \normalsize{#1}
+	\mbox{ }\\ %关键词后空一行
+}
 
 \renewcommand\tableofcontents{%
   \chapter*{\contentsname}
