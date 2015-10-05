@@ -29,22 +29,29 @@
 
 \frontmatter 	% 使用罗马数字对前言编号
 
+\disablenewpage
 %% 摘要
 \pagestyle{main}
 \include{tex/abstract}
 
-%% 目录、插图目录、表格目录
-\tableofcontents
-
-
 \mainmatter	% 使用阿拉伯数字对正文编号
 
 %% 正文内容
+
+%论文的全部标题层次应有条不紊，整齐清晰。正文内容编号方法应采用分级阿拉伯数字编号方法，
+%第一级为“1”、“2”、“3”、等， chapter
+%第二级为“2.1”、“2.2”、“2.3”等， section
+%第三级为“2.2.1”、“2.2.2”、“2.2.3”等，subsection
+%两级之间用下角圆点隔开，除第一级外，其余各级的末尾不加标点。
+%各级标题均单独占行空两格书写序数，之后空一格书写标题。
+%第一级标题小四号黑体，段前0.5行，段后0.5行，
+%其余各级标题均为五号字体。
 \pagestyle{main}
 \include{tex/chapter01}
 \include{tex/chapter02}
 \include{tex/chapter03}
 \include{tex/summary}
+
 
 \appendix	% 使用英文字母对附录编号，重新定义附录中的公式、图图表编号样式
 \renewcommand\theequation{\Alph{chapter}--\arabic{equation}}	

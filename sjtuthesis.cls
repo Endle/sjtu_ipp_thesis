@@ -130,19 +130,26 @@
 \renewcommand{\listalgorithmname}{\sjtu@listalgorithmname}
 \renewcommand{\lstlistingname}{\sjtu@value@listingname}
 % Title Settings at the chapter Level
+% 第一级标题小四号黑体，段前0.5行，段后0.5行，
+%\titleclass{\chapter}{straight}
+%\titleformat{\chapter}[hang]
+%{\zihao{-4}\heiti}{\thechapter.}{0.5em}{}
 \ctexset{chapter={
-	nameformat={\Large\bfseries},
-	titleformat={\Large\bfseries},
-	beforeskip={15\p@},
-	afterskip={12\p@},
+		name={,. },
+		number=\arabic{chapter},
+		format={\zihao{-4}\heiti},
+		beforeskip={2.8mm},
+		afterskip={2.8mm},
+		aftername={},
+		indent={20pt}
 	}
 }
 % Title Settings at the section Level
-\ctexset{section={
-	format={\large\bfseries},
-	afterskip={1.0ex \@plus .2ex},
-	}
-}
+%\ctexset{section={
+%	format={\large\bfseries},
+%	afterskip={1.0ex \@plus .2ex},
+%	}
+%}
 % Title Settings at the subection Level
 \ctexset{subsection={
 	format={\bfseries\normalsize},
@@ -459,7 +466,15 @@
 	  \renewcommand{\headheight}{32pt}
 	}
 \fi
-
+\def \disablenewpage{
+	\let \clearpage@hold=\clearpage
+	\let \cleardoublepage@hold=\cleardoublepage
+	\renewcommand \clearpage{}
+	\renewcommand \cleardoublepage{}
+}
+%\def \enablenewpage{
+%	%FIXME
+%}
 % 中英文摘要
 \newenvironment{abstract}{
 \begin{center}
