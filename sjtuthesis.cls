@@ -253,7 +253,7 @@
 \renewcommand\title[2][\sjtu@value@title]{%
   \def\sjtu@value@title{#2}
   \def\sjtu@value@titlemark{\MakeUppercase{#1}}}
-\def\projectinfo(#1,#2){\def\sjtu@value@projectinfo{第#1期“#2计划”\\项目研究论文}}
+\def\projectinfo(#1,#2){\def\sjtu@value@projectinfo{第#1期“#2计划”项目研究论文}}
 \newcommand\projectno[1]{\def\sjtu@value@projectno{#1}}
 \newcommand\projecthead[1]{\def\sjtu@value@projecthead{#1}}
 \newcommand\projectheadmajor[1]{\def\sjtu@value@projectheadmajor{#1}}
@@ -356,6 +356,8 @@
 	\cleardoublepage
 	%只有第一页有背景 logo
 	\ClearWallPaper
+	%恢复原有页眉1
+	\renewcommand{\headrulewidth}{0.4pt}
 }
 
 
@@ -444,7 +446,7 @@
 	\fancypagestyle{main}{
 	  \fancyhf{}
 	  \fancyhead[L]{\includegraphics[width=0.22\textwidth]{figure/sjtubanner}}
-	  \fancyhead[R]{\nouppercase{\small\kaishu\sjtu@value@titlemark}}
+	  \fancyhead[R]{\zihao{5}\kaishu{\sjtu@value@projectinfo}}
 	  %\fancyfoot[C]{\small 第~{\bfseries\thepage}~页\,共~{\bfseries\pageref{LastPage}}~页}
 	  \renewcommand{\headheight}{32pt}
 	}
