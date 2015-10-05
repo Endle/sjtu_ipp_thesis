@@ -46,8 +46,8 @@
 %==========
 % Segment 1. Import LaTeX packages.
 %==========
-
-\RequirePackage[centering,a4paper,body={16cm,22cm}]{geometry} %设置版面
+%页边距 上 3.2cm、下 2.54cm、左 2.5cm、右 2.5cm、装订线 0cm；页眉距边界1.5cm、页脚1.75cm
+\RequirePackage[a4paper,top=3.2cm,bottom=2.54cm,left=2.5cm,right=2.5cm, headheight=1.5cm, footskip=1.75cm]{geometry} %设置版面
 \RequirePackage{fancyhdr}
 \RequirePackage{lastpage}
 \RequirePackage{fontspec}
@@ -73,7 +73,6 @@
 \RequirePackage{calc}
 \RequirePackage{algorithm, algorithmic}
 \RequirePackage{wallpaper}
-%\RequirePackage{linegoal}
 
 %==========
 % Segment 2. Define general-purpose LaTeX commands.
@@ -119,7 +118,7 @@
 \setmainfont{TeX Gyre Termes}
 
 %% 行距缩放因子
-\linespread{1.3}
+\linespread{1.1} %要求单倍行距，但单倍行距很难看
 
 %% CTeX Settings
 % 名称：目录、表格索引、插图索引、算法、算法索引、代码
@@ -446,6 +445,7 @@
   \cleardoublepage
 }
 
+% 页眉距边界1.5cm、页脚1.75cm
 % fancyhdr页眉页脚设置
 \ifsjtu@bachelor
 	% 本科学位论文页眉页脚设置
