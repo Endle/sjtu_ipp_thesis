@@ -131,9 +131,6 @@
 \renewcommand{\lstlistingname}{\sjtu@value@listingname}
 % Title Settings at the chapter Level
 % 第一级标题小四号黑体，段前0.5行，段后0.5行，
-%\titleclass{\chapter}{straight}
-%\titleformat{\chapter}[hang]
-%{\zihao{-4}\heiti}{\thechapter.}{0.5em}{}
 \ctexset{chapter={
 		name={,. },
 		number=\arabic{chapter},
@@ -145,16 +142,19 @@
 	}
 }
 % Title Settings at the section Level
-%\ctexset{section={
-%	format={\large\bfseries},
-%	afterskip={1.0ex \@plus .2ex},
-%	}
-%}
+%第二级为“2.1”、“2.2”、“2.3”等， section
+\ctexset{section={
+		name={},
+		format={\zihao{5}\songti},
+		indent={20pt}
+		}
+}
+
 % Title Settings at the subection Level
 \ctexset{subsection={
-	format={\bfseries\normalsize},
-	indent={0\ccwd},
-	afterskip={1.0ex \@plus .2ex},
+		name={},
+		format={\zihao{5}\songti},
+		indent={20pt}
 	}
 }
 % Title Settings at the subsubection Level
