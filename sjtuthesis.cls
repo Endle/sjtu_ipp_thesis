@@ -73,6 +73,7 @@
 \RequirePackage{calc}
 \RequirePackage{algorithm, algorithmic}
 \RequirePackage{wallpaper}
+\RequirePackage{etoolbox}
 
 %==========
 % Segment 2. Define general-purpose LaTeX commands.
@@ -599,7 +600,7 @@
    {\endlist}
    
 \renewenvironment{thanks}
-  {\chapter{\sjtu@label@thanks}}
+  {\chapter*{\sjtu@label@thanks}}
   {}
 
 \newenvironment{summary}

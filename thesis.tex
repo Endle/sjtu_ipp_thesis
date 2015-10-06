@@ -16,6 +16,11 @@
 %   submit			% 定稿提交的论文，插入签名扫描版的原创性声明、授权声明 
 % ]
 
+\makeatletter
+\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother
+
+
 % 逐个导入参考文献数据库
 \addbibresource{bib/thesis.bib}
 % \addbibresource{bib/chap2.bib}
@@ -29,10 +34,9 @@
 
 \frontmatter 	% 使用罗马数字对前言编号
 
-\disablenewpage
 %% 摘要
 \pagestyle{main}
-\include{tex/abstract}
+\input{tex/abstract}
 
 \mainmatter	% 使用阿拉伯数字对正文编号
 
@@ -48,12 +52,11 @@
 %其余各级标题均为五号字体。
 \pagestyle{main}
 %正文字数8000－10000字左右，主要包括绪论、研究内容及方法、研究结果及讨论、结论等部分。
-\include{tex/chapter01}
-\include{tex/chapter02}
-\include{tex/chapter03}
-\include{tex/chapter04}
-\include{tex/summary}
-
+\input{tex/chapter01}
+\input{tex/chapter02}
+\input{tex/chapter03}
+\input{tex/chapter04}
+\input{tex/summary}
 
 %\appendix	% 使用英文字母对附录编号，重新定义附录中的公式、图图表编号样式
 %\renewcommand\theequation{\Alph{chapter}--\arabic{equation}}	
@@ -67,8 +70,6 @@
 %\include{tex/app_cjk}
 %\include{tex/app_log}
 
-\backmatter	% 文后无编号部分 
-
 %% 参考资料
 \printbibliography[heading=bibintoc]
 
@@ -76,7 +77,7 @@
 %% 用于盲审的论文需隐去致谢、发表论文、申请专利、参与的项目
 \makeatletter
 \ifsjtu@review\relax\else
-  \include{tex/ack} 	  %% 致谢
+  \input{tex/ack} 	  %% 致谢
 %  \include{tex/pub}	  %% 发表论文
 %  \include{tex/patents}	  %% 申请专利
 %  \include{tex/projects}  %% 参与的项目
