@@ -487,7 +487,7 @@
 			项目负责人：\sjtu@value@projecthead \\
 			项目负责人所在学院：\sjtu@value@projectheadmajor\\
 			指导教师：\sjtu@value@advisor\\
-			指导教师所在学院\\
+			指导教师所在学院：\sjtu@value@projectadvisormajor\\
 			\mbox{ }\\
 	}
 	\heiti\zihao{4}{\sjtu@label@abstract\\}	
