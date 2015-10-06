@@ -1,61 +1,13 @@
 %# -*- coding: utf-8-unix -*-
-\chapter{常见问题}
-\label{chap:faq}
+\chapter{研究结果}
 
-{\bfseries{}Q:我是否能够自由使用这份模板?}
+\section{\TeX}
+\TeX （希腊语：/tɛx/[1]，音译“泰赫”，文本模式下写作TeX），是一个由美国计算机教授高德纳（Donald Ervin Knuth）编写的功能强大的排版软件。它在学术界十分流行，特别是数学、物理学和计算机科学界。\TeX 被普遍认为是一个优秀的排版工具，特别是在处理复杂的数学公式时。利用诸如是\LaTeX 等终端软件，\TeX 就能够排版出精美的文本。
 
-A:这份模板以MIT开源许可证发布，请遵循许可证规范。
+TeX的MIME类型为application/x-tex。
 
-{\bfseries{}Q:我的论文是Word排版的，学校图书馆是不是只收 \LaTeX 排版的论文?}
+\section{\LaTeX}
+\LaTeX（英语发音：/ˈleɪtɛk/ LAY-tek或英语发音：/ˈlɑːtɛk/ LAH-tek，音译“拉泰赫”），文字形式写作\LaTeX，是一种基于\TeX 的排版系统，由美国电脑学家莱斯利·兰伯特在20世纪80年代初期开发，利用这种格式，即使使用者没有排版和程序设计的知识也可以充分发挥由\TeX 所提供的强大功能，能在几天，甚至几小时内生成很多具有书籍品質的印刷品。对于生成复杂表格和数学公式，这一点表现得尤为突出。因此它非常适用于生成高印刷质量的科技和数学类文档。这个系统同样适用于生成从简单的信件到完整书籍的所有其他种类的文档。
 
-A:当然不是，Word版论文肯定收。
+\LaTeX 使用\TeX 作为它的格式化引擎，当前的版本是LaTeX2ε。
 
-{\bfseries{}Q:我的论文是 \LaTeX 排版的，学校图书馆是不是只收Word排版的论文?}
-
-A:当然不是，PDF版的电子论文是可以上交的。是否要交Word版就看你导师的喜好了。
-
-{\bfseries{}Q:为什么屏幕上显示的左右页边距不一样?}
-
-A:模板默认是双面打印，迎面页和背面页的页边距是要交换的，多出来的那一部分是留作装订的。
-
-{\bfseries{}Q:如何获得帮助和反馈意见?}
-
-A:你可以通过\href{https://github.com/weijianwen/sjtu-thesis-template-latex/issues}{在github上开issue}
-、在\href{https://bbs.sjtu.edu.cn/bbsdoc?board=TeX_LaTeX}{水源LaTeX版}发帖反映你使用过程中遇到的问题。
-
-{\bfseries{}Q:使用文本编辑器查看tex文件时遇到乱码?}
-
-A:请确保你的文本编辑器使用UTF-8编码打开了tex源文件。
-
-{\bfseries{}Q:在CTeX编译模板遇到“rsfs10.tfm already exists”的错误提示?}
-
-A:请删除\verb+X:\CTEX\UserData\fonts\tfm\public\rsfs+下的文件再重新编译。问题讨论见\href{https://bbs.sjtu.edu.cn/bbstcon,board,TeX_LaTeX,reid,1352982719.html}{水源2023号帖}。
-
-{\bfseries{}Q:升级了TeXLive 2012，编译后的文档出现“minus”等字样?}
-
-A:这是xltxtra和fontspec宏包导致的问题。学位论文模板从0.5起使用metatlog宏包代替xltxtra生成 \XeTeX 标志，解决了这个问题。
-
-{\bfseries{}Q:为什么在bib中加入的参考文献，没有在参考文献列表中出现?}
-
-A: bib中的参考文献条目，只有通过\verb+\parencite+或者\verb+\supercite+在正文中引用，才会加入到参考文献列表中。
-
-{\bfseries{}Q:在macTex中，为什么pdf图片无法插入？}
-
-A:如果报错是“pdf: image inclusion failed for "./figure/chap2/sjtulogo.pdf".”，则采取以下步骤
-
-\begin{lstlisting}[basicstyle=\small\ttfamily, caption={编译模板}, numbers=none]
-  brew install xpdf
-  wget http://mirrors.ctan.org/support/epstopdf.zip
-  unzip epstopdf.zip
-  cp epstopdf/epstopdf.pl /usr/local/bin/
-  cd figure/chap2
-  pdftops sjtulogo.pdf
-  epstopdf sjtulogo.ps
-  pdfcrop sjtulogo.pdf
-  mv sjtulogo.pdf backup.pdf
-  mv sjtulogo-crop.pdf sjtulogo.pdf
-\end{lstlisting}
-
-{\bfseries{}Q:如何向你致谢?}
-
-A: 烦请在模板的\href{https://github.com/weijianwen/SJTUThesis}{github主页}点击“Star”，我想粗略统计一下使用学位论文模板的人数，谢谢大家。非常欢迎大家向项目贡献代码。
