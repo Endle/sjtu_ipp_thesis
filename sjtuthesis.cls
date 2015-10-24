@@ -454,7 +454,7 @@
 	%% 正文页眉页脚
 	\fancypagestyle{main}{
 	  \fancyhf{}
-	  \fancyhead[L]{\includegraphics[width=0.22\textwidth]{figure/sjtubanner}}
+	  \fancyhead[L]{\includegraphics[width=3.12cm,height=0.82cm]{figure/sjtubannerred.png}}
 	  \fancyhead[R]{\zihao{5}\kaishu{\sjtu@value@projectinfo}}
 	  \fancyfoot[C]{\small 第~{\bfseries\thepage}~页\,共~{\bfseries\pageref{LastPage}}~页}
 	  \renewcommand{\headheight}{32pt}
@@ -462,7 +462,7 @@
 	%% 开章页页眉页脚
 	\fancypagestyle{plain}{% 设置开章页页眉页脚风格(只有页码作为页脚)
 	  \fancyhf{}%
-	  \fancyhead[L]{\nouppercase{\small\kaishu\includegraphics[width=0.22\textwidth]{figure/sjtubanner}}}
+	  \fancyhead[L]{\includegraphics[width=3.12cm,height=0.82cm]{figure/sjtubannerred.png}}
 	  \fancyhead[R]{\zihao{5}\kaishu{\sjtu@value@projectinfo}}
 	  \fancyfoot[C]{\small 第~{\bf\thepage}~页\,共~{\bf\pageref{LastPage}}~页}
 	  \renewcommand{\headheight}{32pt}
