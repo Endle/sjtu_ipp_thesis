@@ -327,10 +327,10 @@
 	\thispagestyle{fancy}
 	\renewcommand{\headrulewidth}{0pt}
 	\fancyhead[R]{\kaishu\zihao{5}项目编号：\underline{\makebox[1.8\width]{\sjtu@value@projectno}}}
-	\CenterWallPaper{0.5}{figure/sjtulogo.png}
+	\CenterWallPaper{1}{figure/first_page.pdf}
 	\begin{center}
 		\includegraphics{figure/sjtubanner_nologo.png}
-		\vskip\stretch{1}
+		\vskip\stretch{0.5}
 		{\heiti\zihao{-1}\sjtu@value@projectinfo} %24号字
 		\vskip\stretch{1}
 		{\fangsong\zihao{4}}
